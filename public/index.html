@@ -4,14 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FPLxPLM OFFICIAL APP</title>
+
+  <!-- Fun font for title -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <!-- Emoji Button -->
   <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.min.js"></script>
-  <!-- Firebase compat SDKs (MUST be BEFORE client.js) -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 </head>
 <body>
   <div class="container">
@@ -26,7 +24,7 @@
 
       <div class="top-actions">
         <button id="loginBtn" class="icon-btn">Login with Google</button>
-        <div id="userInfo" class="user-info hidden" style="display: none;">
+        <div id="userInfo" class="user-info hidden">
           <img id="userPic" alt="avatar" class="user-pic">
           <span id="userName"></span>
           <button id="logoutBtn" class="icon-btn">Logout</button>
@@ -52,8 +50,7 @@
       <section id="chatroom" class="panel chat-wrap">
         <div class="panel-head">
           <h2>Chatroom</h2>
-          <!-- <<--- removed the "Telegram-style ..." text -->
-          <div class="chat-info"></div>
+          <!-- Teks info fungsi chat dah dibuang -->
         </div>
 
         <div id="chatWindow" class="chat-window"></div>
@@ -62,28 +59,18 @@
           <button id="emojiBtn" class="icon-btn">😊</button>
           <input id="nameInput" class="name-input" placeholder="Name (optional)">
           <input id="msgInput" class="msg-input" placeholder="Taip mesej...">
-          <button id="gifBtn" class="icon-btn">GIF</button>
-          <!-- removed upload input (you said no storage) -->
-          <button id="imgBtn" class="icon-btn">Paste URL</button>
-          <button id="sendBtn" class="send-btn primary" disabled>Hantar</button>
+          <!-- Buang button GIF -->
+          <input type="file" id="imageUpload" accept="image/*" style="display:none">
+          <button id="imgBtn" class="icon-btn">📷</button>
+          <button id="sendBtn" class="send-btn primary">Hantar</button>
         </div>
       </section>
     </main>
   </div>
 
-  <!-- GIF modal -->
-  <div id="gifModal" class="modal hidden">
-    <div class="modal-body">
-      <div class="modal-header">
-        <input id="gifQuery" placeholder="Cari GIF (cth: goal)">
-        <button id="gifSearch" class="primary">Cari</button>
-        <button id="gifClose" class="icon-btn">Tutup</button>
-      </div>
-      <div id="gifResults" class="gif-grid"></div>
-    </div>
-  </div>
+  <!-- Buang modal GIF sepenuhnya -->
 
-  <!-- load client script LAST -->
+  <!-- client logic -->
   <script src="client.js"></script>
 </body>
-  </html>
+          </html>
