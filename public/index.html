@@ -24,7 +24,7 @@
 
       <div class="top-actions">
         <button id="loginBtn" class="icon-btn">Login with Google</button>
-        <div id="userInfo" class="user-info hidden">
+        <div id="user" class="user-info hidden">
           <img id="userPic" alt="avatar" class="user-pic">
           <span id="userName"></span>
           <button id="logoutBtn" class="icon-btn">Logout</button>
@@ -50,37 +50,23 @@
       <section id="chatroom" class="panel chat-wrap">
         <div class="panel-head">
           <h2>Chatroom</h2>
-          <div class="chat-info">Telegram-style • bold/italic/==highlight== • emoji/gif/image</div>
+          <div class="chat-info">Telegram-style • bold/italic/==highlight== • emoji</div>
         </div>
 
-        <div id="chatWindow" class="chat-window"></div>
+        <!-- Chat messages -->
+        <div id="chatBox" class="chat-window"></div>
 
+        <!-- Message composer -->
         <div class="composer">
           <button id="emojiBtn" class="icon-btn">😊</button>
-          <input id="nameInput" class="name-input" placeholder="Name (optional)">
-          <input id="msgInput" class="msg-input" placeholder="Taip mesej...">
-          <button id="gifBtn" class="icon-btn">GIF</button>
-          <input type="file" id="imageUpload" accept="image/*" style="display:none">
-          <button id="imgBtn" class="icon-btn">📷</button>
-          <button id="sendBtn" class="send-btn primary">Hantar</button>
+          <input id="message" class="msg-input" placeholder="Taip mesej...">
+          <button id="sendBtn" class="send-btn primary" disabled>Hantar</button>
         </div>
       </section>
     </main>
   </div>
 
-  <!-- GIF modal -->
-  <div id="gifModal" class="modal hidden">
-    <div class="modal-body">
-      <div class="modal-header">
-        <input id="gifQuery" placeholder="Cari GIF (cth: goal)">
-        <button id="gifSearch" class="primary">Cari</button>
-        <button id="gifClose" class="icon-btn">Tutup</button>
-      </div>
-      <div id="gifResults" class="gif-grid"></div>
-    </div>
-  </div>
-
   <!-- client logic -->
-  <script src="client.js"></script>
+  <script type="module" src="client.js"></script>
 </body>
 </html>
