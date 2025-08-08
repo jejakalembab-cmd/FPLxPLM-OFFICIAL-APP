@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FPLxPLM OFFICIAL APP</title>
+
+  <!-- Fun font for title -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Emoji Button -->
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="top">
+      <div class="brand">
+        <img src="logo.png" alt="logo" class="logo">
+        <div>
+          <div class="app-title">FPLxPLM OFFICIAL APP</div>
+          <div class="app-sub">League meny2m</div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button id="loginBtn" class="icon-btn">Login with Google</button>
+        <div id="userInfo" class="user-info hidden">
+          <img id="userPic" alt="avatar" class="user-pic">
+          <span id="userName"></span>
+          <button id="logoutBtn" class="icon-btn">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- STANDINGS -->
+      <section id="standings" class="panel">
+        <div class="panel-head">
+          <h2>Standings</h2>
+          <div class="controls">
+            <input id="leagueId" placeholder="League ID or auto-join code" value="meny2m">
+            <button id="loadLeague" class="primary">Load</button>
+          </div>
+        </div>
+        <div id="standingsList" class="standings"></div>
+        <a href="#chatroom" id="goChat" class="chat-btn">💬 Go to Chatroom</a>
+      </section>
+
+      <!-- CHATROOM -->
+      <section id="chatroom" class="panel chat-wrap">
+        <div class="panel-head">
+          <h2>Chatroom</h2>
+          <div class="chat-info">Telegram-style • bold/italic/==highlight== • emoji/gif/image</div>
+        </div>
+
+        <div id="chatWindow" class="chat-window"></div>
+
+        <div class="composer">
+          <button id="emojiBtn" class="icon-btn">😊</button>
+          <input id="nameInput" class="name-input" placeholder="Name (optional)">
+          <input id="msgInput" class="msg-input" placeholder="Taip mesej...">
+          <button id="gifBtn" class="icon-btn">GIF</button>
+          <input type="file" id="imageUpload" accept="image/*" style="display:none">
+          <button id="imgBtn" class="icon-btn">📷</button>
+          <button id="sendBtn" class="send-btn primary">Hantar</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- GIF modal -->
+  <div id="gifModal" class="modal hidden">
+    <div class="modal-body">
+      <div class="modal-header">
+        <input id="gifQuery" placeholder="Cari GIF (cth: goal)">
+        <button id="gifSearch" class="primary">Cari</button>
+        <button id="gifClose" class="icon-btn">Tutup</button>
+      </div>
+      <div id="gifResults" class="gif-grid"></div>
+    </div>
+  </div>
+
+  <!-- client logic -->
+  <script src="client.js"></script>
+</body>
+</html>
